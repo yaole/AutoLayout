@@ -1,31 +1,30 @@
-# AutoLayout
-pakage of system auotolayout  you can Mixed use it and system's
-
-//domo:blueView.width == redViw.width*0.5
-UIView *redview = [[UIView alloc] init];
-redview.backgroundColor = [UIColor redColor];
-[self.view addSubview:redview];
-
-//set margin in super view
-[redview everyMargininSpuerView:UIEdgeInsetsMake(20, 10, 0, -10)];
-//set only height
-[redview.YXHeight equalToValue:30];
-
-UIView *blueView =  [[UIView alloc] init];
-blueView.backgroundColor = [UIColor blueColor];
-[self.view addSubview:blueView];
-//blueView.right == redView.right
-[blueView.YXEdgeRight equalTo:redview.YXEdgeRight];
-//buluView.y = redView.y + 30
-[blueView.YXEdgeTop equalTo:redview.YXEdgeBottom offset:30];
-//blueView.Width = redView.width *0.5
-[blueView.YXWidth equalTo:redview.YXWidth times:0.5];
-//the same height
-[blueView.YXHeight equalTo:redview.YXHeight];
-----------------------------------------------------------------
-is it very easy ?
-
-#the other function
+//
+//  UIView+AutoLayout.h
+//  CNComposition
+//
+//  Created by yyx on 15/7/26.
+//  Copyright (c) 2015年 yyx. All rights reserved.
+//
+/**
+ * 这个框架只是对系统的AutoLayout进行封装,增加使用功能
+ * 模拟storyboard中的功能,可以与系统本身的布局混合使用
+ *  
+ *  
+ *
+ */
+#import <UIKit/UIKit.h>
+#import "YXAttribute.h"
+@interface UIView (AutoLayout)
+@property (nonatomic,strong,readonly) YXAttribute *YXEdgeTop;
+@property (nonatomic,strong,readonly) YXAttribute *YXEdgeLeft;
+@property (nonatomic,strong,readonly) YXAttribute *YXEdgeBottom;
+@property (nonatomic,strong,readonly) YXAttribute *YXEdgeRight;
+@property (nonatomic,strong,readonly) YXAttribute *YXEdgeLeading;
+@property (nonatomic,strong,readonly) YXAttribute *YXEdgeTrailing;
+@property (nonatomic,strong,readonly) YXAttribute *YXWidth;
+@property (nonatomic,strong,readonly) YXAttribute *YXHeight;
+@property (nonatomic,strong,readonly) YXAttribute *YXCenterX;
+@property (nonatomic,strong,readonly) YXAttribute *YXCenterY;
 
 #pragma mark - ---与父控件之间关系 relation to super view----------
 //与父控件关系,可以设置为0   //margin insuperView ,can be setted 0
@@ -49,7 +48,7 @@ is it very easy ?
 //垂直中心偏移  have adistance to supverview's centerY
 - (void)vertialCenterInsuperViewOffset:(CGFloat)offset;
 
-#pragma mark - 与非父控件之间的联系
+#pragma mark - 与非父控件之间的联系 
 #pragma mark - relation to other view which is not supeview
 //与非父控件之间的关系
 
@@ -86,9 +85,9 @@ is it very easy ?
 - (void)views:(NSArray *)views XIncreaseRegularlyWithDelta:(CGFloat)delta;
 //x成倍递增       the left(x) of the views increase regularlly,increase with a static times
 - (void)views:(NSArray *)views XIncreaseRegularlyWithTimes:(CGFloat)times;
-//y递增          the top....(same as the line of 86)
+//y递增          the top....(same with the last line)
 - (void)views:(NSArray *)views YIncreaseRegularlyWithDelta:(CGFloat)delta;
-//y成倍递增       the top....(same as the line of 88)
+//y成倍递增       the top
 - (void)views:(NSArray *)views YIncreaseRegularlyWithTimes:(CGFloat)times;
 //centerX递增    the centerX
 - (void)views:(NSArray *)views CenterXIncreaseRegularlyWithDelta:(CGFloat)delta;
@@ -106,3 +105,5 @@ is it very easy ?
 - (void)views:(NSArray *)views HeightIncreaseRegularlyWithDelta:(CGFloat)delta;
 //高度成倍递增       the height
 - (void)views:(NSArray *)views HeightIncreaseRegularlyWithTimes:(CGFloat)times;
+
+@end
