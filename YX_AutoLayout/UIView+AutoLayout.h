@@ -14,6 +14,7 @@
  */
 #import <UIKit/UIKit.h>
 #import "YXAttribute.h"
+#import "UIView+Frame.h"
 @interface UIView (AutoLayout)
 @property (nonatomic,strong,readonly) YXAttribute *YXEdgeTop;
 @property (nonatomic,strong,readonly) YXAttribute *YXEdgeLeft;
