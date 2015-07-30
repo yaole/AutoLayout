@@ -4,7 +4,7 @@ pakage of system auotolayout  you can Mixed use it and system's
 if you have any questions or suggestions,please send
 email to 747616044@qq.com ,thanks;
 
-//domo:blueView.width == redViw.width*0.5
+//demo:blueView.width == redViw.width*0.5
 UIView *redview = [[UIView alloc] init];
 redview.backgroundColor = [UIColor redColor];
 [self.view addSubview:redview];
