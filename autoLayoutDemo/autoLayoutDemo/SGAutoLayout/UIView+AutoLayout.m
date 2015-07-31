@@ -1,41 +1,33 @@
-//
-//  UIView+AutoLayout.m
-//  CNComposition
-//
-//  Created by yyx on 15/7/26.
-//  Copyright (c) 2015年 yyx. All rights reserved.
-//
-
 #import "UIView+AutoLayout.h"
 
 @implementation UIView (AutoLayout)
 #pragma mark - -----------------与父控件关系 -----------------
 //与父控件关系,可以设置为0
-- (void)topMarginInsuperView:(CGFloat)margin{
-    [self.YXEdgeTop equalTo:self.superview.YXEdgeTop times:1 offset:margin];
+- (void)topMarginToSuperView:(CGFloat)margin{
+    [self.SGEdgeTop equalTo:self.superview.SGEdgeTop multiply:1 offset:margin];
 }
-- (void)leftMarginInsuperView:(CGFloat)margin{
-    [self.YXEdgeLeft equalTo:self.superview.YXEdgeLeft times:1 offset:margin];
+- (void)leftMarginToSuperView:(CGFloat)margin{
+    [self.SGEdgeLeft equalTo:self.superview.SGEdgeLeft multiply:1 offset:margin];
 }
-- (void)bottomMarginInsuperView:(CGFloat)margin{
-    [self.YXEdgeBottom equalTo:self.superview.YXEdgeBottom times:1 offset:margin];}
-- (void)rightMarginInsuperView:(CGFloat)margin{
-    [self.YXEdgeRight equalTo:self.superview.YXEdgeRight times:1 offset:margin];
+- (void)bottomMarginToSuperView:(CGFloat)margin{
+    [self.SGEdgeBottom equalTo:self.superview.SGEdgeBottom multiply:1 offset:margin];}
+- (void)rightMarginToSuperView:(CGFloat)margin{
+    [self.SGEdgeRight equalTo:self.superview.SGEdgeRight multiply:1 offset:margin];
 }
 
 //同时设置多个方向上的margin,不设值传 0
-- (void)everyMargininSpuerView:(UIEdgeInsets)offset{
+- (void)everyMarginToSpuerView:(UIEdgeInsets)offset{
     if (offset.top) {
-        [self topMarginInsuperView:offset.top];
+        [self topMarginToSuperView:offset.top];
     }
     if (offset.left) {
-        [self leftMarginInsuperView:offset.left];
+        [self leftMarginToSuperView:offset.left];
     }
     if (offset.bottom) {
-        [self bottomMarginInsuperView:offset.bottom];
+        [self bottomMarginToSuperView:offset.bottom];
     }
     if (offset.right) {
-        [self rightMarginInsuperView:offset.right];
+        [self rightMarginToSuperView:offset.right];
     }
 }
 //中心位置
@@ -78,19 +70,19 @@
 }
 //水平偏移
 - (void)standInlineInHorizontalWith:(UIView *)view offset:(CGFloat)offset{
-    [self.YXCenterX equalTo:view.YXCenterX times:1 offset:offset];
+    [self.SGCenterX equalTo:view.SGCenterX multiply:1 offset:offset];
 }
 //垂直偏移
 - (void)standInlineInVertialWith:(UIView *)view offset:(CGFloat)offset{
-    [self.YXCenterY equalTo:view.YXCenterY times:1 offset:offset];
+    [self.SGCenterY equalTo:view.SGCenterY multiply:1 offset:offset];
 }
 //等宽
 - (void)equalWidthToView:(UIView *)view{
-    [self.YXWidth equalTo:view.YXWidth];
+    [self.SGWidth equalTo:view.SGWidth];
 }
 //等高
 - (void)equalHeightToView:(UIView *)view{
-    [self.YXHeight equalTo:view.YXHeight];
+    [self.SGHeight equalTo:view.SGHeight];
 }
 
 #pragma mark - -----------------多控件管理 -----------------
@@ -153,7 +145,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXEdgeLeft equalTo:view1.YXEdgeLeft offset:delta];
+            [view2.SGEdgeLeft equalTo:view1.SGEdgeLeft offset:delta];
         }
     }
 }
@@ -163,7 +155,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXEdgeLeft equalTo:view1.YXEdgeLeft times:times];
+            [view2.SGEdgeLeft equalTo:view1.SGEdgeLeft multiply:times];
         }
     }
 }
@@ -173,7 +165,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXEdgeTop equalTo:view1.YXEdgeTop offset:delta];
+            [view2.SGEdgeTop equalTo:view1.SGEdgeTop offset:delta];
         }
     }
 }
@@ -183,7 +175,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXEdgeRight equalTo:view1.YXEdgeRight times:times];
+            [view2.SGEdgeRight equalTo:view1.SGEdgeRight multiply:times];
         }
     }
 }
@@ -193,7 +185,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXCenterX equalTo:view1.YXCenterX offset:delta];
+            [view2.SGCenterX equalTo:view1.SGCenterX offset:delta];
         }
     }
 }
@@ -203,7 +195,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXCenterX equalTo:view1.YXCenterX times:times];
+            [view2.SGCenterX equalTo:view1.SGCenterX multiply:times];
         }
     }
 }
@@ -213,7 +205,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXCenterY equalTo:view1.YXCenterY offset:delta];
+            [view2.SGCenterY equalTo:view1.SGCenterY offset:delta];
         }
     }
 }
@@ -223,7 +215,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXCenterY equalTo:view1.YXCenterY times:times];
+            [view2.SGCenterY equalTo:view1.SGCenterY multiply:times];
         }
     }
 }
@@ -233,7 +225,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXWidth equalTo:view1.YXWidth offset:delta];
+            [view2.SGWidth equalTo:view1.SGWidth offset:delta];
         }
     }
 }
@@ -243,7 +235,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXWidth equalTo:view1.YXWidth times:times];
+            [view2.SGWidth equalTo:view1.SGWidth multiply:times];
         }
     }
 }
@@ -253,7 +245,7 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXHeight equalTo:view1.YXHeight offset:delta];
+            [view2.SGHeight equalTo:view1.SGHeight offset:delta];
         }
     }
 }
@@ -263,70 +255,70 @@
         for (int i = 0; i < views.count - 1; i++) {
             UIView *view1 = views[i];
             UIView *view2 = views[i + 1];
-            [view2.YXHeight equalTo:view1.YXHeight times:times];
+            [view2.SGHeight equalTo:view1.SGHeight multiply:times];
         }
     }
 }
 #pragma mark - -----------------属性反向赋值 -----------------
 //将调用者的保存到自己的属性中
-- (YXAttribute *)YXEdgeTop{
-    YXAttribute *top = [[YXAttribute alloc] init];
-    top.sourceView = self;
+- (SGAttribute *)SGEdgeTop{
+    SGAttribute *top = [[SGAttribute alloc] init];
+    top.relativeView = self;
     top.attribute = NSLayoutAttributeTop;
     return top;
 }
-- (YXAttribute *)YXEdgeLeft{
-    YXAttribute *left = [[YXAttribute alloc] init];
-    left.sourceView = self;
+- (SGAttribute *)SGEdgeLeft{
+    SGAttribute *left = [[SGAttribute alloc] init];
+    left.relativeView = self;
     left.attribute = NSLayoutAttributeLeft;
     return left;
 }
-- (YXAttribute *)YXEdgeBottom{
-    YXAttribute *bottom = [[YXAttribute alloc] init];
-    bottom.sourceView = self;
+- (SGAttribute *)SGEdgeBottom{
+    SGAttribute *bottom = [[SGAttribute alloc] init];
+    bottom.relativeView = self;
     bottom.attribute = NSLayoutAttributeBottom;
     return bottom;
 }
-- (YXAttribute *)YXEdgeRight{
-    YXAttribute *right = [[YXAttribute alloc] init];
-    right.sourceView = self;
+- (SGAttribute *)SGEdgeRight{
+    SGAttribute *right = [[SGAttribute alloc] init];
+    right.relativeView = self;
     right.attribute = NSLayoutAttributeRight;
     return right;
 }
-- (YXAttribute *)YXEdgeLeading{
-    YXAttribute *leading = [[YXAttribute alloc] init];
-    leading.sourceView = self;
+- (SGAttribute *)SGEdgeLeading{
+    SGAttribute *leading = [[SGAttribute alloc] init];
+    leading.relativeView = self;
     leading.attribute = NSLayoutAttributeLeading;
     return leading;
 }
-- (YXAttribute *)YXEdgeTrailing{
-    YXAttribute *trailing = [[YXAttribute alloc] init];
-    trailing.sourceView = self;
+- (SGAttribute *)SGEdgeTrailing{
+    SGAttribute *trailing = [[SGAttribute alloc] init];
+    trailing.relativeView = self;
     trailing.attribute = NSLayoutAttributeTrailing;
     return trailing;
 }
-- (YXAttribute *)YXWidth{
-    YXAttribute *width = [[YXAttribute alloc] init];
-    width.sourceView = self;
+- (SGAttribute *)SGWidth{
+    SGAttribute *width = [[SGAttribute alloc] init];
+    width.relativeView = self;
     width.attribute = NSLayoutAttributeWidth;
     return width;
 }
-- (YXAttribute *)YXHeight{
-    YXAttribute *height = [[YXAttribute alloc] init];
-    height.sourceView = self;
+- (SGAttribute *)SGHeight{
+    SGAttribute *height = [[SGAttribute alloc] init];
+    height.relativeView = self;
     height.attribute = NSLayoutAttributeHeight;
     return height;
 }
 
-- (YXAttribute *)YXCenterX{
-    YXAttribute *centerX = [[YXAttribute alloc] init];
-    centerX.sourceView = self;
+- (SGAttribute *)SGCenterX{
+    SGAttribute *centerX = [[SGAttribute alloc] init];
+    centerX.relativeView = self;
     centerX.attribute = NSLayoutAttributeCenterX;
     return centerX;
 }
-- (YXAttribute *)YXCenterY{
-    YXAttribute *centerY = [[YXAttribute alloc] init];
-    centerY.sourceView = self;
+- (SGAttribute *)SGCenterY{
+    SGAttribute *centerY = [[SGAttribute alloc] init];
+    centerY.relativeView = self;
     centerY.attribute = NSLayoutAttributeCenterY;
     return centerY;
 }

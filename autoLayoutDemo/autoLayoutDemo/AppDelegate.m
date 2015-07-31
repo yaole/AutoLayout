@@ -1,10 +1,3 @@
-//
-//  AppDelegate.m
-//  autoLayoutDemo
-//
-//  Created by yyx on 15/7/26.
-//  Copyright (c) 2015年 yyx. All rights reserved.
-//
 
 #import "AppDelegate.h"
 

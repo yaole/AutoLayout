@@ -1,10 +1,4 @@
-//
-//  ViewController.m
-//  CNComposition
-//
-//  Created by yyx on 15/7/25.
-//  Copyright (c) 2015年 yyx. All rights reserved.
-//
+
 
 #import "ViewController.h"
 #import "UIView+AutoLayout.h"
@@ -17,22 +11,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 #warning 必须先添加控件,再添加约束
+#warning must have a superView except rootView
 //domo1:蓝色是红色宽度的一半
     UIView *redview = [[UIView alloc] init];
     redview.backgroundColor = [UIColor redColor];
     [self.view addSubview:redview];
     
-    [redview everyMargininSpuerView:UIEdgeInsetsMake(20, 10, 0, -10)];
-    [redview.YXHeight equalToValue:30];
+    [redview everyMarginToSpuerView:UIEdgeInsetsMake(20, 10, 0, -10)];
+    [redview.SGHeight equalToValue:30];
 
     UIView *blueView =  [[UIView alloc] init];
     blueView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:blueView];
     
-    [blueView.YXEdgeRight equalTo:redview.YXEdgeRight];
-    [blueView.YXEdgeTop equalTo:redview.YXEdgeBottom offset:30];
-    [blueView.YXWidth equalTo:redview.YXWidth times:0.5];
-    [blueView.YXHeight equalTo:redview.YXHeight];
+    [blueView.SGEdgeRight equalTo:redview.SGEdgeRight];
+    [blueView.SGEdgeTop equalTo:redview.SGEdgeBottom offset:30];
+    [blueView.SGWidth equalTo:redview.SGWidth multiply:0.5];
+    [blueView.SGHeight equalTo:redview.SGHeight];
    
 //demo2:柱状图,x递增,高度递
 
@@ -46,12 +41,12 @@
         [self.view addSubview:view];
         [views addObject:view];
         
-        [view bottomMarginInsuperView:0];//与底部固定
-        [view.YXWidth equalToValue:30];//指定固定宽度为30
+        [view bottomMarginToSuperView:0];//与底部固定
+        [view.SGWidth equalToValue:30];//指定固定宽度为30
         
         if (0 == i) {
-            [view leftMarginInsuperView:0];
-            [view.YXHeight equalToValue:60];
+            [view leftMarginToSuperView:0];
+            [view.SGHeight equalToValue:60];
         }
         
     }

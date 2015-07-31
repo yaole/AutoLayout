@@ -36,14 +36,7 @@
     temp.origin = origin;
     self.frame = temp;
 }
-//centerP
--(CGPoint)centerP{
-  return [self convertPoint:self.center toView:nil];
-}
-- (void)setCenterP:(CGPoint)centerP{
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    self.centerP = [self convertPoint:centerP fromView:window];
-}
+
 //centerX
 - (CGFloat)centerX{
     return self.center.x;
@@ -90,9 +83,14 @@
 - (CGSize)size{
     return self.bounds.size;
 }
+
+//此处不能用bounds,有bug,y值会自动减半
 - (void)setSize:(CGSize)size{
-    CGRect temp = self.bounds;
+    CGRect temp = self.frame;
+    
     temp.size = size;
-    self.bounds = temp;
+    
+    self.frame = temp;
+   
 }
 @end

@@ -14,8 +14,9 @@
 		47B542A51B652410007C7C76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B542A31B652410007C7C76 /* LaunchScreen.xib */; };
 		47B542B11B652410007C7C76 /* autoLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B542B01B652410007C7C76 /* autoLayoutDemoTests.m */; };
 		47B542BB1B652423007C7C76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B542BA1B652423007C7C76 /* ViewController.m */; };
-		47B542C11B65242C007C7C76 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B542BE1B65242C007C7C76 /* UIView+AutoLayout.m */; };
-		47B542C21B65242C007C7C76 /* YXAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B542C01B65242C007C7C76 /* YXAttribute.m */; };
+		47F7228A1B6BE2AE00801C90 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F722851B6BE2AE00801C90 /* UIView+AutoLayout.m */; };
+		47F7228B1B6BE2AE00801C90 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F722871B6BE2AE00801C90 /* UIView+Frame.m */; };
+		47F7228C1B6BE2AE00801C90 /* SGAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F722891B6BE2AE00801C90 /* SGAttribute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +43,12 @@
 		47B542AF1B652410007C7C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B542B01B652410007C7C76 /* autoLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = autoLayoutDemoTests.m; sourceTree = "<group>"; };
 		47B542BA1B652423007C7C76 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		47B542BD1B65242C007C7C76 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
-		47B542BE1B65242C007C7C76 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
-		47B542BF1B65242C007C7C76 /* YXAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAttribute.h; sourceTree = "<group>"; };
-		47B542C01B65242C007C7C76 /* YXAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAttribute.m; sourceTree = "<group>"; };
+		47F722841B6BE2AE00801C90 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		47F722851B6BE2AE00801C90 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		47F722861B6BE2AE00801C90 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		47F722871B6BE2AE00801C90 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		47F722881B6BE2AE00801C90 /* SGAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAttribute.h; sourceTree = "<group>"; };
+		47F722891B6BE2AE00801C90 /* SGAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAttribute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +90,7 @@
 		47B542931B652410007C7C76 /* autoLayoutDemo */ = {
 			isa = PBXGroup;
 			children = (
-				47B542BC1B65242C007C7C76 /* YX_AutoLayout */,
+				47F722831B6BE2AE00801C90 /* SGAutoLayout */,
 				47B542981B652410007C7C76 /* AppDelegate.h */,
 				47B542991B652410007C7C76 /* AppDelegate.m */,
 				47B5429B1B652410007C7C76 /* ViewController.h */,
@@ -126,15 +129,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		47B542BC1B65242C007C7C76 /* YX_AutoLayout */ = {
+		47F722831B6BE2AE00801C90 /* SGAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				47B542BD1B65242C007C7C76 /* UIView+AutoLayout.h */,
-				47B542BE1B65242C007C7C76 /* UIView+AutoLayout.m */,
-				47B542BF1B65242C007C7C76 /* YXAttribute.h */,
-				47B542C01B65242C007C7C76 /* YXAttribute.m */,
+				47F722841B6BE2AE00801C90 /* UIView+AutoLayout.h */,
+				47F722851B6BE2AE00801C90 /* UIView+AutoLayout.m */,
+				47F722861B6BE2AE00801C90 /* UIView+Frame.h */,
+				47F722871B6BE2AE00801C90 /* UIView+Frame.m */,
+				47F722881B6BE2AE00801C90 /* SGAttribute.h */,
+				47F722891B6BE2AE00801C90 /* SGAttribute.m */,
 			);
-			path = YX_AutoLayout;
+			path = SGAutoLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B542BB1B652423007C7C76 /* ViewController.m in Sources */,
-				47B542C21B65242C007C7C76 /* YXAttribute.m in Sources */,
-				47B542C11B65242C007C7C76 /* UIView+AutoLayout.m in Sources */,
+				47F7228C1B6BE2AE00801C90 /* SGAttribute.m in Sources */,
+				47F7228A1B6BE2AE00801C90 /* UIView+AutoLayout.m in Sources */,
 				47B5429A1B652410007C7C76 /* AppDelegate.m in Sources */,
+				47F7228B1B6BE2AE00801C90 /* UIView+Frame.m in Sources */,
 				47B542971B652410007C7C76 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +442,7 @@
 				47B542B61B652410007C7C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47B542B71B652410007C7C76 /* Build configuration list for PBXNativeTarget "autoLayoutDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				47B542B91B652410007C7C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

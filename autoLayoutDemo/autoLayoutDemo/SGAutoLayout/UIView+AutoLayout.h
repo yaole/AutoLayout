@@ -1,43 +1,42 @@
-//
-//  UIView+AutoLayout.h
-//  CNComposition
-//
-//  Created by yyx on 15/7/26.
-//  Copyright (c) 2015年 yyx. All rights reserved.
-//
 /**
- * 这个框架只是对系统的AutoLayout进行封装,增加使用功能
+ * 这个框架只是对系统的AutoLayout进行封装,增加实用功能
  * 模拟storyboard中的功能,可以与系统本身的布局混合使用
  *  
- *  
+ * This framework is only the package of the system AutoLayout , 
+ * increase the practical function
  *
+ * The function of storyboard can be mixed with the system layout
  */
 #import <UIKit/UIKit.h>
-#import "YXAttribute.h"
-#import "UIView+Frame.h"
+#import "SGAttribute.h"
+
 @interface UIView (AutoLayout)
-@property (nonatomic,strong,readonly) YXAttribute *YXEdgeTop;
-@property (nonatomic,strong,readonly) YXAttribute *YXEdgeLeft;
-@property (nonatomic,strong,readonly) YXAttribute *YXEdgeBottom;
-@property (nonatomic,strong,readonly) YXAttribute *YXEdgeRight;
-@property (nonatomic,strong,readonly) YXAttribute *YXEdgeLeading;
-@property (nonatomic,strong,readonly) YXAttribute *YXEdgeTrailing;
-@property (nonatomic,strong,readonly) YXAttribute *YXWidth;
-@property (nonatomic,strong,readonly) YXAttribute *YXHeight;
-@property (nonatomic,strong,readonly) YXAttribute *YXCenterX;
-@property (nonatomic,strong,readonly) YXAttribute *YXCenterY;
+
+@property (nonatomic,strong,readonly) SGAttribute *SGEdgeTop;
+@property (nonatomic,strong,readonly) SGAttribute *SGEdgeLeft;
+@property (nonatomic,strong,readonly) SGAttribute *SGEdgeBottom;
+@property (nonatomic,strong,readonly) SGAttribute *SGEdgeRight;
+@property (nonatomic,strong,readonly) SGAttribute *SGEdgeLeading;
+@property (nonatomic,strong,readonly) SGAttribute *SGEdgeTrailing;
+@property (nonatomic,strong,readonly) SGAttribute *SGWidth;
+@property (nonatomic,strong,readonly) SGAttribute *SGHeight;
+@property (nonatomic,strong,readonly) SGAttribute *SGCenterX;
+@property (nonatomic,strong,readonly) SGAttribute *SGCenterY;
 
 #pragma mark - ---与父控件之间关系 relation to super view----------
-//与父控件关系,可以设置为0   //margin insuperView ,can be setted 0
-- (void)topMarginInsuperView:(CGFloat)margin;
-- (void)leftMarginInsuperView:(CGFloat)margin;
-- (void)bottomMarginInsuperView:(CGFloat)margin;
-- (void)rightMarginInsuperView:(CGFloat)margin;
+//与父控件间距,可以设置为0
+//margin to superView ,could be 0
+- (void)topMarginToSuperView:(CGFloat)margin;
+- (void)leftMarginToSuperView:(CGFloat)margin;
+- (void)bottomMarginToSuperView:(CGFloat)margin;
+- (void)rightMarginToSuperView:(CGFloat)margin;
 
 //同时设置多个方向上的margin,不设值传 0
-//marin in every derection,if don't needed in some derecton,set 0
-- (void)everyMargininSpuerView:(UIEdgeInsets)offset;
-//中心位置 in the center of superview
+//marin In each direction,if don't needed in any derecton,set 0
+- (void)everyMarginToSpuerView:(UIEdgeInsets)offset;
+
+//中心位置
+//in the center of superview
 - (void)inCenterOfsuperView;
 
 //水平中心  centerX in superview
@@ -86,9 +85,9 @@
 - (void)views:(NSArray *)views XIncreaseRegularlyWithDelta:(CGFloat)delta;
 //x成倍递增       the left(x) of the views increase regularlly,increase with a static times
 - (void)views:(NSArray *)views XIncreaseRegularlyWithTimes:(CGFloat)times;
-//y递增          the top....(same with the last line)
+//y递增          the top....(same as the line of 86)
 - (void)views:(NSArray *)views YIncreaseRegularlyWithDelta:(CGFloat)delta;
-//y成倍递增       the top
+//y成倍递增       the top....(same as the line of 88)
 - (void)views:(NSArray *)views YIncreaseRegularlyWithTimes:(CGFloat)times;
 //centerX递增    the centerX
 - (void)views:(NSArray *)views CenterXIncreaseRegularlyWithDelta:(CGFloat)delta;
